@@ -13,8 +13,9 @@ def createParticlesNC(fnam,ids,ines,jnes,lons,lats,levs,days):
     levv=f.createVariable('depth',np.float64,('i',))
     dv=f.createVariable('time',np.float64,('i',))
 
-    f.file_format_major_version=1
-    f.file_format_minor_version=1
+    #f.file_format_major_version=1
+    #f.file_format_minor_version=1
+    f.time_axis = 0
     iv.long_name='identification of the drifter'
     iv.units='dimensionless'
     iv.packing=0
@@ -25,9 +26,9 @@ def createParticlesNC(fnam,ids,ines,jnes,lons,lats,levs,days):
     jnev.units='none'
     jnev.packing=0
     lonv.long_name='longitude'
-    lonv.units='degrees_east'
+    lonv.units='degrees_E'
     latv.long_name='latitude'
-    latv.units='degrees_north'
+    latv.units='degrees_N'
     levv.long_name= 'depth below surface'
     levv.units='m'
     dv.units='days since 1900-01-01 00:00:00'
@@ -43,4 +44,4 @@ def createParticlesNC(fnam,ids,ines,jnes,lons,lats,levs,days):
     f.close()
     
     
-createParticlesNC('drifters.res.nc',ids=[1,2,3],ines=[0,0,0],jnes=[0,0,0],lons=[270.1,270.3,270.6],lats=[24.625,24.375,24.875],levs=[15, 15, 15],days=[1,1,1])
+createParticlesNC('drifters.res.nc',ids=[1,2,3],ines=[0,0,0],jnes=[0,0,0],lons=[270.1,270.3,270.6],lats=[24.625,24.375,24.875],levs=[15, 15, 15],days=[0,0,0])
