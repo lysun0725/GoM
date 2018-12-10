@@ -13,8 +13,8 @@ def createParticlesNC(fnam,ids,ines,jnes,lons,lats,levs,days):
     levv=f.createVariable('depth',np.float64,('i',))
     dv=f.createVariable('time',np.float64,('i',))
 
-    #f.file_format_major_version=1
-    #f.file_format_minor_version=1
+    f.file_format_major_version=1
+    f.file_format_minor_version=1
     f.time_axis = 0
     iv.long_name='identification of the drifter'
     iv.units='dimensionless'
